@@ -1,34 +1,32 @@
-import React, { Component } from 'react';
-//import FirstComponent from './components/learning-examples/FirstComponent'
-//import SecondComponent from './components/learning-examples/SecondComponent'
-//import ThirdComponent from './components/learning-examples/ThirdComponent'
-//import Counter from './components/counter/Counter'
-import TodoApp from './components/todo/TodoApp'
-import './App.css';
-import './bootstrap.css';
-
+import React, {Component} from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Home } from './Home';
+import { About } from './About';
+import { Navigation } from './Navigiation';
+import { Contact } from './Contact';
+import { NoMatch } from './NoMatch';
+import { Layout } from './components/Layout';
+import  {NavigationBar} from './components/NavigiationBar';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        {/*<Counter/>*/}
-        <TodoApp />
-      </div>
+      <React.Fragment>
+        <Router>
+        <NavigationBar/>
+        <Layout>
+          
+            <Switch>
+              <Route exact path="/Homeww" component={Home} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/Navigation" component={Navigation} />
+              <Route exact path="/contact" component={Contact} />
+              <Route component={NoMatch} />
+            </Switch>
+        </Layout>
+        </Router>
+      </React.Fragment>
     );
   }
 }
-
-// class LearningComponents extends Component {
-//   render() {
-//     return (
-//       <div className="LearningComponents">
-//          My Hello World
-//          <FirstComponent></FirstComponent>
-//          <SecondComponent></SecondComponent>
-//          <ThirdComponent></ThirdComponent>
-//       </div>
-//     );
-//   }
-// }
 
 export default App;

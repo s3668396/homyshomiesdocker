@@ -23,6 +23,15 @@
   color: #61dafb;
 }
 
+.navigationB {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 24;
+  text-align: center;
+  border: #282c34;
+  padding: 5%;
+  
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

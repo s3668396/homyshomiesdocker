@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 
-getInitialState: function(){
+{
+function displayItems(){
     return {
       initialItems: [
         "IphoneXL",
@@ -13,11 +14,11 @@ getInitialState: function(){
       ],
       items: []
     }
- },
- componentWillMount: function(){
+ }
+ function Append(){
    this.setState({items: this.state.initialItems})
- },
- render: function(){
+ }
+ function filter(){
    return (
      <div className="filter-list">
        <input type="text" placeholder="Search" onChange={this.filterList}/>
@@ -25,7 +26,7 @@ getInitialState: function(){
      </div>
    );
  }
-});
+
 
 var List = React.createClass({
  render: function(){
@@ -41,4 +42,4 @@ var List = React.createClass({
  }
 });
 
-React.render(<FilteredList/>
+React.render(<FilteredList/>)}

@@ -1,28 +1,38 @@
-import React, {Component} from 'react';
+import React, { Component,useState, useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home } from './Home';
 import { About } from './About';
-import { Navigation } from './Navigiation';
+import { Navigation} from './Navigation';
 import { Contact } from './Contact';
-import { NoMatch } from './NoMatch';
+import { Map } from './Map';
 import { Layout } from './components/Layout';
-import  {NavigationBar} from './components/NavigiationBar';
+import { NavigationBar } from './components/NavigationBar';
+import { Jumbotron } from './components/Jumbotron';
+import {
+  withGoogleMap,
+  withScriptjs,
+  GoogleMap,
+  Marker,
+  InfoWindow
+} from "react-google-maps";
+import * as buildingData from "./Data/rmitBuilding.json";
+
 class App extends Component {
   render() {
     return (
       <React.Fragment>
         <Router>
-        <NavigationBar/>
-        <Layout>
-          
+          <NavigationBar />
+          <Jumbotron />
+          <Layout>
             <Switch>
-              <Route exact path="/Homeww" component={Home} />
-              <Route exact path="/about" component={About} />
-              <Route exact path="/Navigation" component={Navigation} />
-              <Route exact path="/contact" component={Contact} />
-              <Route component={NoMatch} />
+              <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/navigation" component={Map} />
+              {/* <Route component={NoMatch} /> */}
             </Switch>
-        </Layout>
+          </Layout>
         </Router>
       </React.Fragment>
     );

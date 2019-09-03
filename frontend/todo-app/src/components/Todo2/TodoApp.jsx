@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
+import { withRouter } from 'react-router'
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 import AuthenticationService from './AuthenticationService.js'
+import AuthenticatedRoute from './AuthenticatedRoute.jsx'
 
 class TodoApp extends Component {
     render() {
@@ -12,9 +14,9 @@ class TodoApp extends Component {
                         <Switch>
                         <Route path="/" exact component={LoginComponent}/>
                         <Route path="/login" component={LoginComponent}/>
-                        <Route path="/welcome/:name" component={WelcomeComponent}/>
-                        <Route path="/todos" component={ListTodosComponent}/>
-                        <Route path="/logout" component={LogoutComponent}/>
+                        <AuthenticatedRoute path="/welcome/:name" component={WelcomeComponent}/>
+                        <AuthenticatedRoute path="/todos" component={ListTodosComponent}/>
+                        <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
                         <Route component={ErrorComponent} />
                         </Switch> {/* ensures that only one of these routes is shown at a given time */}
                         <FooterComponent/>
@@ -28,28 +30,52 @@ class TodoApp extends Component {
     }
 }
 
-class HeaderComponent extends Component {
+// class HeaderComponent extends Component {
+//     render() {
+//         //method currently not working, does not run each time the page is loaded
+//         const isUserLoggedIn = AuthenticationService.isUserLoggedIn();
+//         console.log(isUserLoggedIn);
+
+//         return (
+//             <header>
+//                 <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+//                     <div><a className="navbar-brand">Homys Homies</a></div>
+//                     <ul className="navbar-nav">
+//                         {<li><Link className="nav-link" to="/welcome/archmod">Home</Link></li>}
+//                         {<li><Link className="nav-link" to="/todos">Todos</Link></li>}
+//                     </ul>
+//                     <ul className="navbar-nav navbar-collapse justify-content-end">
+//                         {<li><Link className="nav-link" to="/login">Login</Link></li>}
+//                         {<li><Link className="nav-link" to="/logout" onClick={AuthenticationService.logout}>Logout</Link></li>}
+//                     </ul>
+//                 </nav>
+//             </header>
+//         )
+//     }
+// }
+
+class HeaderComponent extends Component{
     render() {
         const isUserLoggedIn = AuthenticationService.isUserLoggedIn();
         console.log(isUserLoggedIn);
-
         return (
             <header>
                 <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                    <div><a className="navbar-brand">Homys Homies</a></div>
+                    <div><a href="http://www.tekshia.com" className="navbar-brand">KosKou</a></div>
                     <ul className="navbar-nav">
-                        {<li><Link className="nav-link" to="/welcome/archmod">Home</Link></li>}
-                        {<li><Link className="nav-link" to="/todos">Todos</Link></li>}
+                        {isUserLoggedIn && <li><Link className="nav-link" to="/welcome/user@gmail.com">Home</Link></li>}
+                        {isUserLoggedIn && <li><Link className="nav-link" to="/users">Users</Link></li>}
                     </ul>
-                    <ul className="navbar-nav navbar-collapse justify-content-end">
-                        {<li><Link className="nav-link" to="/login">Login</Link></li>}
-                        {<li><Link className="nav-link" to="/logout" onClick={AuthenticationService.logout}>Logout</Link></li>}
+                    <ul className="navbar-nasv navbar-collapse justify-content-end">
+                        {!isUserLoggedIn && <li><Link className="nav-link" to="/login">Login</Link></li>}
+                        {isUserLoggedIn && <li><Link className="nav-link" to="/logout" onClick={AuthenticationService.logout}>Logout</Link></li>}
                     </ul>
                 </nav>
             </header>
-        )
+        );
     }
 }
+export default withRouter(HeaderComponent);
 
 class FooterComponent extends Component {
     render() {

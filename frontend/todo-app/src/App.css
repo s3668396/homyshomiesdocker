@@ -31,6 +31,11 @@
   background: #222;
 }
 
+.mapContainer {
+  border: #222;
+  border-style: solid;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -8,6 +8,7 @@ import ListTodosComponent from './ListTodosComponent'
 import LogoutComponent from './LogoutComponent'
 import WelcomeComponent from './WelcomeComponent'
 import FooterComponent from './FooterComponent'
+import MapComponent from './MapComponent'
 
 class TodoApp extends Component {
     render() {
@@ -21,6 +22,8 @@ class TodoApp extends Component {
                         <Route path="/login" component={LoginComponent}/>
                         <AuthenticatedRoute path="/welcome/:name" component={WelcomeComponent}/>
                         <AuthenticatedRoute path="/todos" component={ListTodosComponent}/>
+                        <AuthenticatedRoute path="/map" component={MapComponent}/>
+
                         <AuthenticatedRoute path="/logout" component={LogoutComponent}/>
                         <Route component={ErrorComponent} />
                         </Switch> {/* ensures that only one of these routes is shown at a given time */}

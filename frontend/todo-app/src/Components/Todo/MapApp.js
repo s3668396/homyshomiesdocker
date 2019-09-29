@@ -90,7 +90,7 @@ function Map() {
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 
-export default function App() {
+export default function MapApp() {
   return (
   <div style={{width:'1200px', height: '800px' }}>
      <WrappedMap 

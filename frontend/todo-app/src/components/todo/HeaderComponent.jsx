@@ -15,6 +15,7 @@ class HeaderComponent extends Component{
                         {isUserLoggedIn && <li><Link className="nav-link" to="/welcome/archmod">Home</Link></li>}
                         {isUserLoggedIn && <li><Link className="nav-link" to="/todos">Todos</Link></li>}
                         {isUserLoggedIn && <li><Link className="nav-link" to="/map">Map API</Link></li>}
+                        {isUserLoggedIn && <li><Link className="nav-link" to="/buysell">Buy sell API</Link></li>}
                     </ul>
                     <ul className="navbar-nasv navbar-collapse justify-content-end">
                         {!isUserLoggedIn && <li><Link className="nav-link" to="/login">Login</Link></li>}

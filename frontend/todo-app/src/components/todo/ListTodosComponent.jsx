@@ -17,7 +17,7 @@ class ListTodosComponent extends Component {
             return (
             <div>
                 <h1>List todos</h1>
-                <div className="continer">
+                <div className="container">
                     <table className="table">
                         <thead>
                             <tr>

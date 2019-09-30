@@ -3,7 +3,7 @@ class AuthenticationService {
         console.log("Register Successful")
         sessionStorage.setItem('authenticatedUser',username);
     }
- 
+
     logout(){
         console.log("Logout Successful")
         sessionStorage.removeItem('authenticatedUser');

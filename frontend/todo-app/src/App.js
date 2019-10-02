@@ -1,35 +1,34 @@
-import React, {Component} from 'react';//
-//import logo from './logo.svg';
+import React, { Component } from 'react';
+//import FirstComponent from './components/learning-examples/FirstComponent'
+//import SecondComponent from './components/learning-examples/SecondComponent'
+//import ThirdComponent from './components/learning-examples/ThirdComponent'
+//import Counter from './components/counter/Counter'
+import TodoApp from './components/todo/TodoApp'
 import './App.css';
-import TodoApp from './Components/Todo/TodoApp';
-import './bootstrap.css'
-import MapAPI from './Components/Todo/MapAPI.jsx';
+import './bootstrap.css';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <div className = "App">
-          {/* My hello world yeet
-          <FirstComponent></FirstComponent> */}
-          <TodoApp/>
-        </div>
+      <div className="App">
+        {/*<Counter/>*/}
+        <TodoApp />
       </div>
-    )
+    );
   }
 }
 
-// creating a component, you must extend the component class
-// // must also import component from react
-// class FirstComponent extends Component {
+// class LearningComponents extends Component {
 //   render() {
 //     return (
-//       <div className = "App">
-//         This is my first component :)
+//       <div className="LearningComponents">
+//          My Hello World
+//          <FirstComponent></FirstComponent>
+//          <SecondComponent></SecondComponent>
+//          <ThirdComponent></ThirdComponent>
 //       </div>
-//     )
+//     );
 //   }
 // }
-
 
 export default App;

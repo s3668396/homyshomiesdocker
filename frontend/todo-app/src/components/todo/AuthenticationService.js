@@ -32,9 +32,16 @@ class AuthenticationService {
         sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username)
         this.setupAxiosInterceptors(this.createJWTToken(token))
     }
+<<<<<<< HEAD
 
     createJWTToken(token) {
         return 'Bearer ' + token
+=======
+ 
+    logout(){
+        console.log("Logout Successful")
+        sessionStorage.removeItem('authenticatedUser');
+>>>>>>> parent of 152fb274... joel
     }
 
 

@@ -10,26 +10,36 @@ import './bootstrap.css';
 =======
 import TodoApp from './Components/Todo/TodoApp';
 import './bootstrap.css'
+<<<<<<< HEAD
+>>>>>>> parent of 152fb274... joel
+=======
 >>>>>>> parent of 152fb274... joel
 
 class App extends Component {
   render() {
     return (
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div className="App">
         {/*<Counter/>*/}
         <TodoApp />
 =======
+=======
+>>>>>>> parent of 152fb274... joel
       <div className = "App">
         {/* My hello world yeet
         <FirstComponent></FirstComponent> */}
         <TodoApp/>
+<<<<<<< HEAD
+>>>>>>> parent of 152fb274... joel
+=======
 >>>>>>> parent of 152fb274... joel
       </div>
     );
   }
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 // class LearningComponents extends Component {
 //   render() {
@@ -44,6 +54,8 @@ class App extends Component {
 //   }
 // }
 =======
+=======
+>>>>>>> parent of 152fb274... joel
 // creating a component, you must extend the component class
 // must also import component from react
 class FirstComponent extends Component {
@@ -55,6 +67,10 @@ class FirstComponent extends Component {
     )
   }
 }
+<<<<<<< HEAD
+>>>>>>> parent of 152fb274... joel
+=======
+
 >>>>>>> parent of 152fb274... joel
 
 export default App;

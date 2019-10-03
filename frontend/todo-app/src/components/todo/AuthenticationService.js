@@ -27,6 +27,7 @@ class AuthenticationService {
         sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username)
         this.setupAxiosInterceptors(this.createBasicAuthToken(username, password))
     }
+<<<<<<< HEAD
 
     registerSuccessfulLoginForJwt(username, token) {
         sessionStorage.setItem(USER_NAME_SESSION_ATTRIBUTE_NAME, username)
@@ -37,6 +38,8 @@ class AuthenticationService {
     createJWTToken(token) {
         return 'Bearer ' + token
 =======
+=======
+>>>>>>> parent of 152fb274... joel
  
     logout(){
         console.log("Logout Successful")

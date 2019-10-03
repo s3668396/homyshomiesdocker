@@ -20,6 +20,9 @@ import ListTodosComponent from './ListTodosComponent'
 import LogoutComponent from './LogoutComponent'
 import WelcomeComponent from './WelcomeComponent'
 import FooterComponent from './FooterComponent'
+<<<<<<< HEAD
+>>>>>>> parent of 152fb274... joel
+=======
 >>>>>>> parent of 152fb274... joel
 
 class TodoApp extends Component {

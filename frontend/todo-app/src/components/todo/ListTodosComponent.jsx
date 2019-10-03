@@ -83,9 +83,14 @@ class ListTodosComponent extends Component {
         return (
             <div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <h1>List Todos</h1>
                 {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
                 <div className="container">
+=======
+                <h1>List todos</h1>
+                <div className="continer">
+>>>>>>> parent of 152fb274... joel
 =======
                 <h1>List todos</h1>
                 <div className="continer">

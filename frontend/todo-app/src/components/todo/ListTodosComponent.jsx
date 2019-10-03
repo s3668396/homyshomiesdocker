@@ -82,14 +82,9 @@ class ListTodosComponent extends Component {
         console.log('render')
         return (
             <div>
-<<<<<<< HEAD
                 <h1>List Todos</h1>
                 {this.state.message && <div class="alert alert-success">{this.state.message}</div>}
                 <div className="container">
-=======
-                <h1>List todos</h1>
-                <div className="continer">
->>>>>>> parent of 152fb274... joel
                     <table className="table">
                         <thead>
                             <tr>

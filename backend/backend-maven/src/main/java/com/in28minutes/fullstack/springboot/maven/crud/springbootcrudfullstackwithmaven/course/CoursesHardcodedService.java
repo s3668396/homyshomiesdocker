@@ -16,8 +16,7 @@ public class CoursesHardcodedService {
 		courses.add(new Course(++idCounter, "Tutor1", "Advanced Professional Development","5:00pm"));
 		courses.add(new Course(++idCounter, "Tutor1", "SEPT","6:00pm"));
 		courses.add(new Course(++idCounter, "Tutor2", "Software engineering fundamentals", "3.30pm"));
-		courses.add(new Course(++idCounter, "Tutor2",
-				"Advanced programming techniques" , "5.00pm"));
+		courses.add(new Course(++idCounter, "Tutor2","Advanced programming techniques" , "5.00pm"));
 	}
 
 	public List<Course> findAll() {

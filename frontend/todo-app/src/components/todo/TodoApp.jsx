@@ -12,7 +12,7 @@ import MapComponent from './MapComponent'
 import BuySellComponent from './BuySellComponent'
 import InstructorApp from '../mentoring/InstructorApp'
 import ListCoursesComponent from '../mentoring/ListCoursesComponent'
-import CourseComponent from '../mentoring/CourseComponent'
+
 
 class TodoApp extends Component {
     render() {
@@ -32,12 +32,8 @@ class TodoApp extends Component {
                         {/*<AuthenticatedRoute path="/mentoring" component={InstructorApp}/>*/}
                         
                         <AuthenticatedRoute path="/mentoring" component={ListCoursesComponent}/>
-
-                        {/*<Route path="/" exact component={ListCoursesComponent} /> */}
-                        {/*<AuthenticatedRoute path="/courses" exact component={ListCoursesComponent} />*/}
-                        <AuthenticatedRoute path="/courses/:id" component={CourseComponent} />
-                        <AuthenticatedRoute component={ErrorComponent} />
-
+                        
+                        <Route component={ErrorComponent} />
                         </Switch> {/* ensures that only one of these routes is shown at a given time */}
                         <FooterComponent/>
                     </>

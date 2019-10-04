@@ -11,8 +11,7 @@ class CourseComponent extends Component {
 
         this.state = {
             id: this.props.match.params.id,
-            description: '',
-            time: ''
+            description: ''
         }
 
         this.onSubmit = this.onSubmit.bind(this)
@@ -31,8 +30,7 @@ class CourseComponent extends Component {
 
         CourseDataService.retrieveCourse(OWNER, this.state.id)
             .then(response => this.setState({
-                description: response.data.description,
-                time: response.data.time
+                description: response.data.description
             }))
     }
 
@@ -42,11 +40,6 @@ class CourseComponent extends Component {
             errors.description = 'Enter a Description'
         } else if (values.description.length < 5) {
             errors.description = 'Enter atleast 5 Characters in Description'
-        }
-        //checks a time has been entered
-        //need to update so that it checks if it is a valid time 
-        if(!values.time) {
-            errors.description = 'Enter a time'
         }
 
         return errors
@@ -59,16 +52,15 @@ class CourseComponent extends Component {
         let course = {
             id: this.state.id,
             description: values.description,
-            time: values.time,
             targetDate: values.targetDate
         }
 
         if (this.state.id === -1) {
             CourseDataService.createCourse(username, course)
-                .then(() => this.props.history.push('/mentoring'))
+                .then(() => this.props.history.push('/courses'))
         } else {
             CourseDataService.updateCourse(username, this.state.id, course)
-                .then(() => this.props.history.push('/mentoring'))
+                .then(() => this.props.history.push('/courses'))
         }
 
         console.log(values);
@@ -76,14 +68,14 @@ class CourseComponent extends Component {
 
     render() {
 
-        let { description, id, time } = this.state
+        let { description, id } = this.state
 
         return (
             <div>
                 <h3>Course</h3>
                 <div className="container">
                     <Formik
-                        initialValues={{ id, description, time }}
+                        initialValues={{ id, description }}
                         onSubmit={this.onSubmit}
                         validateOnChange={false}
                         validateOnBlur={false}
@@ -102,10 +94,6 @@ class CourseComponent extends Component {
                                     <fieldset className="form-group">
                                         <label>Description</label>
                                         <Field className="form-control" type="text" name="description" />
-                                    </fieldset>
-                                    <fieldset className="form-group">
-                                        <label>Time</label>
-                                        <Field className="form-control" type="text" name="time" />
                                     </fieldset>
                                     <button className="btn btn-success" type="submit">Save</button>
                                 </Form>

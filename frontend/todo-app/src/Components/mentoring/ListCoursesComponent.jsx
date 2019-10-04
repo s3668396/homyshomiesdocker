@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CourseDataService from '../service/CourseDataService';
 
+
 const OWNER = 'dummy'
 
 class ListCoursesComponent extends Component {
@@ -65,6 +66,7 @@ class ListCoursesComponent extends Component {
                             <tr>
                                 <th>Id</th>
                                 <th>Description</th>
+                                <th>Time</th>
                                 <th>Update</th>
                                 <th>Delete</th>
                             </tr>
@@ -76,6 +78,7 @@ class ListCoursesComponent extends Component {
                                         <tr key={course.id}>
                                             <td>{course.id}</td>
                                             <td>{course.description}</td>
+                                            <td>{course.time}</td>
                                             <td><button className="btn btn-success" onClick={() => this.updateCourseClicked(course.id)}>Update</button></td>
                                             <td><button className="btn btn-warning" onClick={() => this.deleteCourseClicked(course.id)}>Delete</button></td>
                                         </tr>

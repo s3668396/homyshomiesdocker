@@ -6,7 +6,7 @@ import CourseComponent from './CourseComponent';
 class InstructorApp extends Component {
     render() {
         return (
-            <Router>
+            <Router>    
                 <>
                     <h1>Instructor Application</h1>
                     <Switch>

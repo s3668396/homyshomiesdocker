@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import CourseDataService from '../service/CourseDataService';
 
-const INSTRUCTOR = 'in28minutes'
+const OWNER = 'dummy'
 
 class ListCoursesComponent extends Component {
     constructor(props) {
@@ -20,8 +20,9 @@ class ListCoursesComponent extends Component {
         this.refreshCourses();
     }
 
+    //All hard coded values
     refreshCourses() {
-        CourseDataService.retrieveAllCourses(INSTRUCTOR)//HARDCODED
+        CourseDataService.retrieveAllCourses(OWNER)
             .then(
                 response => {
                     //console.log(response);
@@ -30,8 +31,9 @@ class ListCoursesComponent extends Component {
             )
     }
 
+    //deletes a course and refreshes the page
     deleteCourseClicked(id) {
-        CourseDataService.deleteCourse(INSTRUCTOR, id)
+        CourseDataService.deleteCourse(OWNER, id)
             .then(
                 response => {
                     this.setState({ message: `Delete of course ${id} Successful` })
@@ -40,6 +42,7 @@ class ListCoursesComponent extends Component {
             )
 
     }
+
 
     addCourseClicked() {
         this.props.history.push(`/courses/-1`)

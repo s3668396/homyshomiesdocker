@@ -16,7 +16,9 @@ class App extends Component {
           {/* My hello world yeet
           <FirstComponent></FirstComponent> */}
           <TodoApp/>
-          <InstructorApp/>
+          {//<InstructorApp/>
+          }
+          
         </div>
       </div>
     )

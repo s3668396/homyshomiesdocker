@@ -4,24 +4,34 @@ public class Course {
 	private Long id;
 	private String username;
 	private String description;
+	private String time;
 
 	public Course() {
 
 	}
 
-	public Course(long id, String username, String description) {
+	public Course(long id, String username, String description, String time) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.description = description;
+		this.time = time;
 	}
 
 	public Long getId() {
 		return id;
 	}
+	
+	public void setTime(String time) {
+		this.time = time;
+	}
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getTime() {
+		return time;
 	}
 
 	public String getUsername() {
@@ -47,6 +57,7 @@ public class Course {
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
+		result = prime * result + ((time == null) ? 0 : username.hashCode());
 		return result;
 	}
 

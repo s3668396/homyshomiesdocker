@@ -12,11 +12,12 @@ public class CoursesHardcodedService {
 	private static long idCounter = 0;
 
 	static {
-		courses.add(new Course(++idCounter, "in28minutes", "Learn Full stack with Spring Boot and Angular"));
-		courses.add(new Course(++idCounter, "in28minutes", "Learn Full stack with Spring Boot and React"));
-		courses.add(new Course(++idCounter, "in28minutes", "Master Microservices with Spring Boot and Spring Cloud"));
-		courses.add(new Course(++idCounter, "in28minutes",
-				"Deploy Spring Boot Microservices to Cloud with Docker and Kubernetes"));
+		
+		courses.add(new Course(++idCounter, "Tutor1", "Advanced Professional Development","5:00pm"));
+		courses.add(new Course(++idCounter, "Tutor1", "SEPT","6:00pm"));
+		courses.add(new Course(++idCounter, "Tutor2", "Software engineering fundamentals", "3.30pm"));
+		courses.add(new Course(++idCounter, "Tutor2",
+				"Advanced programming techniques" , "5.00pm"));
 	}
 
 	public List<Course> findAll() {

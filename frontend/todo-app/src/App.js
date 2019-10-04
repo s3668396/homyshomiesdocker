@@ -3,7 +3,10 @@ import React, {Component} from 'react';//
 import './App.css';
 import TodoApp from './Components/Todo/TodoApp';
 import './bootstrap.css'
-import MapAPI from './Components/Todo/MapAPI.jsx';
+//import MapAPI from './Components/Todo/MapAPI.jsx';
+import InstructorApp from './Components/mentoring/InstructorApp';
+
+
 
 class App extends Component {
   render() {
@@ -13,6 +16,7 @@ class App extends Component {
           {/* My hello world yeet
           <FirstComponent></FirstComponent> */}
           <TodoApp/>
+          <InstructorApp/>
         </div>
       </div>
     )

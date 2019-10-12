@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import CourseDataService from '../service/CourseDataService';
+//import CourseDataService from '../service/CourseDataService';
 
-const INSTRUCTOR = 'in28minutes'
+import CourseDataService from '../service/CourseDataService';
+const OWNER = 'dummy'
 
 class CourseComponent extends Component {
     constructor(props) {
@@ -27,7 +28,7 @@ class CourseComponent extends Component {
             return
         }
 
-        CourseDataService.retrieveCourse(INSTRUCTOR, this.state.id)
+        CourseDataService.retrieveCourse(OWNER, this.state.id)
             .then(response => this.setState({
                 description: response.data.description
             }))
@@ -46,7 +47,7 @@ class CourseComponent extends Component {
     }
 
     onSubmit(values) {
-        let username = INSTRUCTOR
+        let username = OWNER
 
         let course = {
             id: this.state.id,

@@ -11,7 +11,9 @@ class CourseComponent extends Component {
 
         this.state = {
             id: this.props.match.params.id,
-            description: ''
+            description: '',
+            time: '',
+            
         }
 
         this.onSubmit = this.onSubmit.bind(this)
@@ -41,6 +43,9 @@ class CourseComponent extends Component {
         } else if (values.description.length < 5) {
             errors.description = 'Enter atleast 5 Characters in Description'
         }
+        if (!values.time) {
+            errors.description = 'enter a time'
+        }
 
         return errors
 
@@ -52,7 +57,8 @@ class CourseComponent extends Component {
         let course = {
             id: this.state.id,
             description: values.description,
-            targetDate: values.targetDate
+            targetDate: values.targetDate,
+            time: values.time
         }
 
         if (this.state.id === -1) {
@@ -68,14 +74,14 @@ class CourseComponent extends Component {
 
     render() {
 
-        let { description, id } = this.state
+        let { description, id, time } = this.state
 
         return (
             <div>
                 <h3>Course</h3>
                 <div className="container">
                     <Formik
-                        initialValues={{ id, description }}
+                        initialValues={{ id, description, time }}
                         onSubmit={this.onSubmit}
                         validateOnChange={false}
                         validateOnBlur={false}
@@ -94,6 +100,10 @@ class CourseComponent extends Component {
                                     <fieldset className="form-group">
                                         <label>Description</label>
                                         <Field className="form-control" type="text" name="description" />
+                                    </fieldset>
+                                    <fieldset className="form-group">
+                                        <label>time</label>
+                                        <Field className="form-control" type="text" name="time" />
                                     </fieldset>
                                     <button className="btn btn-success" type="submit">Save</button>
                                 </Form>

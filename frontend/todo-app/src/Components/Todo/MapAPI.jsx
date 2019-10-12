@@ -11,7 +11,7 @@ import * as buildingData from "./Data/rmitBuilding.json";
 class MapAPI extends Component {
     render() {
         return (
-            <div style={{ width: '800px', height: '800px' }}>
+            <div style={{ width: '1200px', height: '1600px' }}>
                 <WrappedMap
                     googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyAAen9e22aK-VzY8Rpq8RiOE0OEBjZVoFs`}
                     loadingElement={<div style={{ height: "50%" }} />}
